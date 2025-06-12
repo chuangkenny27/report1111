@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Yen 的個人網站</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <div class="nav">
+    <button class="tab-btn active" data-tab="about"><i class="fas fa-user"></i> 自我介紹</button>
+    <button class="tab-btn" data-tab="education"><i class="fas fa-graduation-cap"></i> 教育背景</button>
+    <button class="tab-btn" data-tab="experience"><i class="fas fa-briefcase"></i> 大學經驗</button>
+    <button class="tab-btn" data-tab="skills"><i class="fas fa-code"></i> 專業技能</button>
+    <button class="tab-btn" data-tab="project"><i class="fas fa-folder-open"></i> 專案作品</button>
+    <button class="tab-btn" data-tab="article"><i class="fas fa-pen-nib"></i> 大學比賽經驗</button>
+    <button class="tab-btn" data-tab="award"><i class="fas fa-trophy"></i> 獎項</button>
+    <button class="tab-btn" data-tab="photos"><i class="fas fa-image"></i> 活動照</button>
+  </div>
+
+  <!-- 內容區 -->
+  <div id="about" class="content active">
+    <p>我是莊嚴，主修資訊管理，興趣是做投資與策略規劃。</p>
+    <p>興趣是做投資</p>
+    <p>主要做現股波段操作為主，以基本面選股，技術跟籌面做輔助</p>
+    <p>平常研究宏觀經濟與產業資訊</p>
+    <p>居住:新竹縣</p>
+    <img src="image/yen.jpg" alt="本人照片">
+  </div>
+
+  <div id="education" class="content">
+    <p>國小:上館國小</p>
+    <p>國中:東泰國中</p>
+    <p>高中:忠信高中</p>
+    <p>目前就讀大學:國立聯合大學 資訊管理系大二</p>
+  </div>
+
+  <div id="experience" class="content">
+    <p>大一修過會計、經濟、計算機概論、程式設計</p>
+    <p>大二修過企業概論、統計學、計算機概論、程式設計</p>
+    <p>大一擔任資管1乙副班代</p>
+    <p>大二擔任資管2乙副班代</p>
+  </div>
+
+  <div id="skills" class="content">
+    <ul>
+      <li>學過程式技能方面 C++</li>
+      <li>學過程式技能方面 PHP</li>
+      <li>會計證照丙級</li>
+      <li>電腦處理證照丙級</li>
+      <li>微軟 Excel / Word / PPTX / Outlook 證照</li>
+    </ul>
+  </div>
+
+  <div id="project" class="content">
+    <p>資料庫程式設計(用 PHP 製作財務規劃系統)</p>
+    <p>心得</p>
+    <p>在這次的資料庫程式設計課程中，我們使用 PHP 搭配 MySQL 建置了一個財務規劃系統透過實作，我不只熟悉了 PHP 與資料庫的整合方式，也更深刻理解到後端系統在實際應用中的重要性。在撰寫 PHP 程式時，我學到如何透過表單提交資料並將其寫入資料庫，也學會了使用 PDO 進行安全的資料操作，避免 SQL injection 等安全問題。透過 CRUD（Create、Read、Update、Delete）功能的實作，我理解了 Web 應用程式與資料庫之間的互動流程。</p>
+  </div>
+
+  <div id="article" class="content">
+    <p>團體比賽</p>
+    <p>代表資管2乙參加創意思考比賽</p>
+    <a href="https://www.sinyicharity.org.tw/gather-ideas/vote/2025/11650?openExternalBrowser=1" target="_blank">作品名稱：樂齡汪汪研究所</a>
+  </div>
+
+  <div id="award" class="content">
+    <p>疊杯比賽第三名</p>
+    <img src="image/Sport Stacking.jpg" alt="比賽獎杯照片">
+  </div>
+
+  <div id="photos" class="content">
+    <p>參加資管烤肉活動照片展示區</p>
+    <img src="image/BBQ.jpg" alt="烤肉照片">
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
